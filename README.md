@@ -1,1 +1,59 @@
-# career-spark-agent
+## WeatherBot
+
+## Description
+WeatherBot is a Python-based chatbot that provides real-time weather updates for any city using the WeatherAPI. Powered by the Gemini language model and the agents library, it offers a simple, extensible way to query weather data conversationally.
+
+## Features
+Fetch current weather (temperature and conditions) by city.
+Natural language processing via Gemini API.
+Secure API key management with .env.
+Easy-to-extend tool-based architecture.
+
+## Tech Stack
+Python 3.8+
+
+Libraries: agents, litellm, requests, python-dotenv
+
+APIs: WeatherAPI, Gemini
+
+## Installation
+Clone the repository:
+
+git clone https://github.com/abdulmoiz001CD/weatherbot.git
+cd weatherbot
+
+Set up a virtual environment (optional):
+
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+Install dependencies:
+
+pip install requests python-dotenv agents litellm
+
+
+
+Create a .env file with API keys:
+
+GEMINI_API_KEY=your_gemini_api_key
+WEATHER_API_KEY=your_weather_api_key
+
+## Usage
+
+Run the chatbot:
+
+python main.py
+
+
+
+## Query the weather:
+
+from chatbot import run_agent
+print(run_agent("Weather in Paris"))
+# Output: The weather in Paris is 20°C and Sunny.
+
+
+
+## License
+
+MIT License. See LICENSE for details.
