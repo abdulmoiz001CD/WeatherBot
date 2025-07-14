@@ -9,6 +9,10 @@ async def on_chat():
 
 @cl.on_message
 async def message(message: cl.Message):
-    if message:
-        result_chain = run_agent(message.content)
-        await cl.Message(content=result_chain).send()
+    msg = cl.Message(content="")
+    await msg.send()
+
+    async for token in run_agent(message.content):
+        await msg.stream_token(token)
+
+    await msg.update()
